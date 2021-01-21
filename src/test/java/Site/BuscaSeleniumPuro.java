@@ -24,7 +24,7 @@ public class BuscaSeleniumPuro {
     // 3.2 - Funções e Métodos
     @Before
     public void iniciar(){
-        System.setProperty("webdriver.chrome.driver", "drivers/chrome/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "drivers/chrome/chromedriver_88.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(30000, TimeUnit.MILLISECONDS);
 
@@ -39,10 +39,10 @@ public class BuscaSeleniumPuro {
     @Test
     public void buscaCurso(){
         driver.get(url);
-        driver.findElement(By.id("searchtext")).sendKeys("TestLink" + Keys.ENTER);
+        driver.findElement(By.id("searchtext")).sendKeys("Mantis" + Keys.ENTER);
         driver.findElement(By.cssSelector("span.comprar")).click();
-        Assert.assertEquals("TestLink",driver.findElement(By.cssSelector("span.item-title")).getText());
-        Assert.assertEquals("R$ 79,99", driver.findElement(By.cssSelector("span.new-price")).getText());
+        Assert.assertEquals("Mantis",driver.findElement(By.cssSelector("span.item-title")).getText());
+        Assert.assertEquals("R$ 49,99", driver.findElement(By.cssSelector("span.new-price")).getText());
 
     }
 
