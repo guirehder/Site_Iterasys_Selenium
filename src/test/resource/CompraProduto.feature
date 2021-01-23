@@ -1,5 +1,6 @@
 #language: pt
   Funcionalidade: Comprar Produto
+
   # Fluxo de compras no site Petz
   # Envolve as páginas Home, Resultado da Consulta e Detalhes Paginas
 
