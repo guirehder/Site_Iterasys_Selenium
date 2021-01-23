@@ -40,7 +40,7 @@ public class Simples {
     @Test // O Teste
     public void abrirPagina() {
         driver.get(url); //abrir a pagina inicial do site petz
-        Assert.assertEquals("PetShop: Pet o maior petshop do Brasil.", driver.getTitle()); // validou o texto guia da pagina
+        Assert.assertEquals("Pet Shop: Petz o maior pet shop do Brasil.", driver.getTitle()); // validou o texto guia da pagina
     }
 
 }

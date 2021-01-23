@@ -1,12 +1,12 @@
 #language: pt
-  Funcionalidade: Comprar Produto
+  Funcionalidade: Compra Produto
 
   # Fluxo de compras no site Petz
   # Envolve as páginas Home, Resultado da Consulta e Detalhes Paginas
 
-  Cenario:Compra a partir de uma busca
-    Dado  que acesso o site Petz
+  Cenario: Compra a partir de uma busca
+    Dado que acesso o site da Petz
     Quando busco por "coleira" e pressiono Enter
-    Entao exibe uma lista de produtos relacionados com "coleira"
+    Entao exibe uma lista de produtos relacionados com coleira
     Quando escolho "Coleira Petz Azul para Cães"
-    Entao exibe para o "Tamanho P" o preço de "R$ 39,99"
+    Entao exibe para o "Tamanho P" o preço de "R$39,99"
