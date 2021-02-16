@@ -3,13 +3,17 @@ package petz;
 import Pages.Home;
 import Pages.Lista;
 import Pages.Produto;
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -54,15 +58,16 @@ public class CompraProduto {
         System.out.println("Passo 2");
     }
 
-    @Entao("^exibe uma lista de produtos relacionados com coleira$")
-    public void exibe_uma_lista_de_produtos_relacionados_com_coleira()  {
-        lista.confimarLista();
+    @Entao("^exibe uma lista de produtos relacionados com \"([^\"]*)\"$")
+    public void exibeUmaListaDeProdutosRelacionadosCom(String produto) throws Throwable {
+        Assert.assertEquals("RESULTADOS PARA \"" + produto.toUpperCase() + "\"", lista.lerCabecalhoResultado());
         System.out.println("Passo 3");
+
     }
 
     @Quando("^escolho \"([^\"]*)\"$")
-    public void escolho(String arg1)  {
-        produto.selecionarProduto();
+    public void escolho(String produto)  {
+        lista.selecionarProduto(produto);
         System.out.println("Passo 4");
     }
 
@@ -71,4 +76,6 @@ public class CompraProduto {
         produto.validaPreco();
         System.out.println("Passo 5");
     }
+
+
 }

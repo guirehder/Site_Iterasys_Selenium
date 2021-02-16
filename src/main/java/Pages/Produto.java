@@ -10,12 +10,9 @@ public class Produto extends PageObject {
         super(driver);
     }
 
-    public void selecionarProduto(){
-        driver.findElement(By.cssSelector(".liProduct:nth-child(3) .nome_produto")).click();
-    }
 
     public void validaPreco(){
-        Assert.assertEquals("R$ 39,99", driver.findElement(By.cssSelector(".price-current")).getText());
+        Assert.assertEquals("R$ 29,99", driver.findElement(By.cssSelector(".price-current")).getText());
     }
 
 }
